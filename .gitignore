@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Seeder output
+ADLG_ArmyBuilder_Web/seeder/output/
+
+# Obsidian
+.obsidian/
+
+*.pdf
+*.jpg
