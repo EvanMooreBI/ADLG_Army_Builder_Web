@@ -16,5 +16,15 @@ ADLG_ArmyBuilder_Web/seeder/output/
 # Obsidian
 .obsidian/
 
+# Local scan/media inputs stay private and out of git
 *.pdf
 *.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.tif
+*.tiff
+*.bmp
+*.heic
+*.avif
