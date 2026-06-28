@@ -4,7 +4,14 @@ Web application for building legal army lists for L'Art de la Guerre (ADLG) v4, 
 
 ## Mandatory Codex Workflow
 
-- Use the global `using-superpowers` skill for every task.
+- At the start of every conversation, invoke the Superpowers startup skill first. Prefer `superpowers:using-superpowers` when plugin-namespaced skills are available; otherwise use the global mirror at `C:\Users\crazy\.codex\skills\using-superpowers\SKILL.md`.
+- State one short reason whenever selecting a skill, bundle, or major reference.
+- Use `reference-routing` before loading or editing instruction files, skills, bundles, specs, runbooks, or large references.
+- Use `master-workflow` before planning, editing, validating, or finishing any feature, fix, refactor, behavior change, non-trivial repo change, or non-trivial instruction/workflow documentation change. If skipped, state why the task does not qualify.
+- Use the global skill root `C:\Users\crazy\.codex\skills` for cross-repo workflow skills. `setup-master-workflow` is installed there and should be used only to install, repair, or adapt the workflow for a repo or machine.
+- For non-trivial implementation or workflow-instruction edits, follow `master-workflow` worktree isolation from local `main` or `master`, using `.worktrees/` for detached worktrees. Detached worktrees are isolation only, not durable storage.
+- Run the applicable `master-workflow` gates before handoff: requirements reconciliation, code review/simplification for code changes, writing/docs review and drift checks for docs, visual/artifact validation when relevant, final verification, and finish-state reporting.
+- Keep tracked `AGENTS.md` as repo defaults. Put machine-local or temporary preferences only in ignored local overlays such as `AGENTS.local.md`.
 - Use the global `adlg-armybuilder-context` skill for any ADLG development, requirements work, specs, seeder work, Supabase schema work, validation rules, point calculations, army list parsing, or implementation planning.
 - Use the global `doc-drift-detector` skill whenever changing documentation, changing code that documentation describes, preparing releases, validating README/API accuracy, or checking documentation links.
 - Keep this file as the single root Codex instruction source. Do not recreate `AGENT.md`.
